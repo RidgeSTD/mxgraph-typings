@@ -5377,40 +5377,142 @@ export module mxgraph {
         * spacing, orientation and offset.
         */
     export class mxStackLayout extends mxGraphLayout {
+        /**
+         * Variable: horizontal
+         *
+         * Specifies the orientation of the layout. Default is true.
+         */
+        horizontal: boolean;
+
+        /**
+         * Variable: spacing
+         *
+         * Specifies the spacing between the cells. Default is 0.
+         */
+        spacing: number;
+        /**
+         * Variable: x0
+         *
+         * Specifies the horizontal origin of the layout. Default is 0.
+         */
+        x0: number;
+        /**
+         * Variable: y0
+         *
+         * Specifies the vertical origin of the layout. Default is 0.
+         */
+        y0: number;
+        /**
+         * Variable: border
+         *
+         * Border to be added if fill is true. Default is 0.
+         */
+        border: number;
+        /**
+         * Variable: marginTop
+         *
+         * Top margin for the child area. Default is 0.
+         */
+        marginTop: number;
+        /**
+         * Variable: marginLeft
+         *
+         * Left margin for the child area. Default is 0.
+         */
+        marginLeft: number;
+        /**
+         * Variable: marginRight
+         *
+         * Right margin for the child area. Default is 0.
+         */
+        marginRight: number;
+        /**
+         * Variable: marginBottom
+         *
+         * Bottom margin for the child area. Default is 0.
+         */
+        marginBottom: number;
+        /**
+         * Variable: keepFirstLocation
+         *
+         * Boolean indicating if the location of the first cell should be
+         * kept, that is, it will not be moved to x0 or y0.
+         */
+        keeoFirstLocation: boolean;
+        /**
+         * Variable: fill
+         *
+         * Boolean indicating if dimension should be changed to fill out the parent
+         * cell. Default is false.
+         */
+        fill: boolean;
+        /**
+         * Variable: resizeParent
+         *
+         * If the parent should be resized to match the width/height of the
+         * stack. Default is false.
+         */
+        resizeParent: boolean;
+        /**
+         * Variable: resizeParentMax
+         *
+         * Use maximum of existing value and new value for resize of parent.
+         * Default is false.
+         */
+        resizeParentMax: boolean;
+        /**
+         * Variable: resizeLast
+         *
+         * If the last element should be resized to fill out the parent. Default is
+         * false. If <resizeParent> is true then this is ignored.
+         */
+        resizeLast: boolean;
+        /**
+         * Variable: wrap
+         *
+         * Value at which a new column or row should be created. Default is null.
+         */
+        wrap: boolean;
+        /**
+         * Variable: borderCollapse
+         *
+         * If the strokeWidth should be ignored. Default is true.
+         */
+        borderCollapse: boolean;
         constructor(graph: any, horizontal: any, spacing: any, x0: any, y0: any, border: any);
         /**
-            * Returns <horizontal>.
-            */
+         * Returns <horizontal>.
+         */
         isHorizontal(): any;
         /**
-            * Implements <mxGraphLayout.moveCell>.
-            */
+         * Implements <mxGraphLayout.moveCell>.
+         */
         moveCell(cell: any, x: any, y: any): void;
         /**
-            * Returns the size for the parent container or the size of the graph
-            * container if the parent is a layer or the root of the model.
-            */
+         * Returns the size for the parent container or the size of the graph
+         * container if the parent is a layer or the root of the model.
+         */
         getParentSize(parent: any): any;
         /**
-            * Implements <mxGraphLayout.execute>.
-            *
-            * Only children where <isVertexIgnored> returns false are taken into
-            * account.
-            */
+         * Implements <mxGraphLayout.execute>.
+         *
+         * Only children where <isVertexIgnored> returns false are taken into
+         * account.
+         */
         execute(parent: any): void;
         /**
-            * Implements <mxGraphLayout.execute>.
-            *
-            * Only children where <isVertexIgnored> returns false are taken into
-            * account.
-            */
+         * Implements <mxGraphLayout.execute>.
+         *
+         * Only children where <isVertexIgnored> returns false are taken into
+         * account.
+         */
         setChildGeometry(child: any, geo: any): void;
         /**
-            * Implements <mxGraphLayout.execute>.
-            *
-            * Only children where <isVertexIgnored> returns false are taken into
-            * account.
-            */
+         * Implements <mxGraphLayout.execute>.
+         *
+         * Only children where <isVertexIgnored> returns false are taken into
+         * account.
+         */
         updateParentGeometry(parent: any, pgeo: any, last: any): void;
     }
 
@@ -5728,7 +5830,7 @@ export module mxgraph {
          * Current iteration count.
          */
         iteration: number;
-        
+
         /**
          * An array of all vertices to be laid out.
          */
